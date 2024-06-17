@@ -18,6 +18,11 @@ npm i -g sshsign
 
 ## Usage examples
 
+Private key info:
+```
+sshsign info -k ../.ssh/id_ed25519
+```
+
 Sign:
 ```
 sshsign sign -k ~/.ssh/id_ed25519 -f test.txt

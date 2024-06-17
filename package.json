@@ -1,0 +1,37 @@
+{
+  "name": "sshsign",
+  "version": "1.0.0",
+  "description": "Utility for signing files using SSH keys",
+  "main": "index.js",
+  "bin": {
+    "sshsign": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theinfinityway/sshsign.git"
+  },
+  "keywords": [
+    "ssh",
+    "sign",
+    "version",
+    "crypto",
+    "rsa",
+    "ed25519",
+    "ecdsa"
+  ],
+  "author": "li0ard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theinfinityway/sshsign/issues"
+  },
+  "homepage": "https://github.com/theinfinityway/sshsign#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "minimal-password-prompt": "^1.1.0",
+    "sshpk": "^1.18.0"
+  }
+}

@@ -19,17 +19,17 @@ npm i -g sshsign
 ## Usage examples
 
 Private key info:
-```
+```bash
 sshsign info -k ../.ssh/id_ed25519
 ```
 
 Sign:
-```
+```bash
 sshsign sign -k ~/.ssh/id_ed25519 -f test.txt
 ```
 
 Verify:
-```
+```bash
 sshsign verify -k ~/.ssh/id_ed25519.pub -f test.txt -s test.txt.sig
 ```
 

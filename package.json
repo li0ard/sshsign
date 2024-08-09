@@ -1,13 +1,14 @@
 {
   "name": "sshsign",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility for signing files using SSH keys",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "bin": {
-    "sshsign": "./index.js"
+    "sshsign": "./dist/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist/ && tsc --project tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
     "ed25519",
     "ecdsa"
   ],
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
   "author": "li0ard",
   "license": "MIT",
   "bugs": {
@@ -33,5 +38,8 @@
     "commander": "^12.1.0",
     "minimal-password-prompt": "^1.1.0",
     "sshpk": "^1.18.0"
+  },
+  "devDependencies": {
+    "@types/sshpk": "^1.17.4"
   }
 }

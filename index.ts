@@ -3,7 +3,7 @@
 import { program } from "commander";
 import sshpk, { type AlgorithmType } from "sshpk"
 import fs from "fs"
-import prompt from "./prompt"
+import prompt from "./prompt.js"
 import chalk from "chalk";
 
 const error = chalk.bold.redBright

@@ -44,8 +44,7 @@ const sign = async ({key, file}: inputOptions) => {
         let pk = sshpk.parsePrivateKey(fs.readFileSync(key), "auto", {
             passphrase: pw
         })
-        //@ts-ignore
-        let s = pk.createSign()
+        let s = pk.createSign(pk.defaultHashAlgorithm())
         s.update(fileToSign)
         let signature = s.sign()
         fs.writeFileSync(file + ".sig", `${signature.type}|${signature.toString("ssh")}`)
@@ -66,7 +65,7 @@ const verify = ({key, file, sfile}: inputOptions) => {
     let algorithm = signatureFile.split("|")[0]
     let signature = signatureFile.split("|")[1]
 
-    let v = pk.createVerify();
+    let v = pk.createVerify(pk.defaultHashAlgorithm());
     v.update(fileToSign)
     if(v.verify(sshpk.parseSignature(signature, algorithm as AlgorithmType, "ssh"))) {
         console.log(log(`The signature is correct and belongs to the key with the fingerprint ${pk.fingerprint()}`))
